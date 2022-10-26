@@ -1,7 +1,139 @@
+@font-face {
+	font-family: 'cinzel';
+	src: url("../fonts/cinzel.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: 'the brother hoops';
+	src: url("../fonts/the brother hoops.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: 'ubuntu';
+	src: url("../fonts/ubuntu.woff2") format("woff2");
+}
+
+:root {
+	background-color: #330001;
+}
+
 .bibi-post-history {
+	--title-font: 'the brother hoops';
+	--title-color: white;
+	--month-color: #984344;
+	--bg-color: #211e1f;
+	--img: url("../img/gloves.png");
 	width: 700px;
 }
 
+.bibi-post-history :is(h2, h3, h4) {
+	margin: 0;
+	font-weight: normal;
+}
+
 .bibi-post-history h2 {
-	
+	text-transform: uppercase;
+	letter-spacing: 8px;
+	font-kerning: none;
+	font-family: var(--title-font), sans-serif;
+	font-size: 96px;
+	text-align: center;
+	color: var(--title-color);
+}
+
+.bibi-post-container {
+	border: 2px solid var(--title-color);
+	background-color: var(--bg-color);
+}
+
+.bibi-post-month header {
+	display: grid;
+	height: 96px;
+	grid-template-columns: 1fr 2fr;
+	background-color: var(--month-color);
+}
+
+.bibi-post-month:nth-child(2n) header {
+	grid-template-columns: 2fr 1fr;
+}
+
+.bibi-post-month header .bibi-icon {
+	background-color: black;
+	border-radius: 0 48px 48px 0;
+	display: grid;
+	place-content: center;
+}
+
+.bibi-post-month header .bibi-icon::before {
+	content: '';
+	width: 64px;
+	height: 64px;
+	background-color: var(--month-color);
+	mask-image: var(--img);
+	mask-size: cover;
+	-webkit-mask-image: var(--img);
+	-webkit-mask-size: cover;
+}
+
+.bibi-post-month:nth-child(2n) header .bibi-icon {
+	border-radius: 48px 0 0 48px;
+	grid-column: 2 / 3;
+}
+
+.bibi-post-month header h3 {
+	text-transform: uppercase;
+	letter-spacing: 8px;
+	font-kerning: none;
+	font-size: 72px;
+	font-family: var(--title-font), sans-serif;
+	color: var(--title-color);
+	display: grid;
+	place-content: center;
+}
+
+.bibi-post-month:nth-child(2n) header h3 {
+	grid-row: 1 / 2;
+}
+
+.bibi-post-container article {
+	background-color: var(--bg-color);
+	padding-top: 12px;
+	display: grid;
+	grid-template:
+		"dt title"
+		"desc desc" / 1fr 2fr;
+	color: var(--title-color);
+}
+
+.bibi-post-container article :is(time, .bibi-post-title) {
+	font-family: 'cinzel', serif;
+	justify-self: center;
+	align-self: start;
+}
+
+.bibi-post-container article time {
+	font-size: 24px;
+	line-height: .75;
+}
+
+.bibi-post-container article .bibi-post-title {
+	text-align: end;
+}
+
+.bibi-post-container article .bibi-post-title h4 {
+	font-size: 48px;
+	line-height: .85;
+}
+
+.bibi-post-container article .bibi-post-title span {
+	font-family: 'ubuntu', sans-serif;
+	font-size: 14px;
+}
+
+.bibi-post-container article .bibi-post-details {
+	grid-area: desc;
+	font-family: Ubuntu, serif;
+	margin: 8px 16px;
+	border: 2px solid black;
+	padding: 8px;
 }
