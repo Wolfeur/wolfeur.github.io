@@ -31,7 +31,7 @@
 }
 
 @layer bibi {
-	.bibi-post-history :is(br, :not(time) > br) {
+	:is(.bibi-post-history > br, .bibi-post-history :not(time) > br) {
 		display: none !important;
 	}
 
