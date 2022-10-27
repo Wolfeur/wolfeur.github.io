@@ -36,6 +36,7 @@
 	}
 
 	.bibi-post-history * {
+		line-height: 1.15 !important;
 		border: none !important;
 		font-weight: normal !important;
 		background: none !important;
