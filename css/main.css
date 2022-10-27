@@ -31,7 +31,7 @@
 }
 
 @layer bibi {
-	.bibi-post-history :not(time) > br {
+	.bibi-post-history :is(br, :not(time) > br) {
 		display: none !important;
 	}
 
@@ -39,6 +39,12 @@
 		border: none !important;
 		font-weight: normal !important;
 		background: none !important;
+		padding: 0 !important;
+		margin: 0 !important;
+		position: static !important;
+		height: auto !important;
+		width: auto !important;
+		letter-spacing: normal !important;
 	}
 
 	.bibi-post-history :is(h2, h3, h4) {
@@ -145,6 +151,8 @@
 	}
 
 	.bibi-post-container :is(a, article) .bibi-post-title h4 {
+		font-family: var(--title-font), serif !important;
+		text-align: end !important;
 		font-size: var(--title-size) !important;
 		margin-right: 16px !important;
 		line-height: .85 !important;
@@ -158,6 +166,7 @@
 
 	.bibi-post-container :is(a, article) .bibi-post-details {
 		grid-area: desc !important;
+		font-size: 16px !important;
 		font-family: Ubuntu, serif !important;
 		margin: 8px 16px !important;
 		border: 2px solid black !important;
