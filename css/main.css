@@ -18,11 +18,15 @@
 }
 
 .bibi-post-history {
-	--title-font: 'the brother hoops';
-	--title-color: white;
+	--heading-font: 'the brother hoops';
+	--title-font: 'cinzel';
+	--desc-font: 'ubuntu';
+	--font-color: white;
 	--month-color: #984344;
 	--bg-color: #211e1f;
+	--hover-color: #fff3;
 	--img: url("../img/gloves.png");
+	--title-size: 48px;
 	width: 700px;
 }
 
@@ -35,14 +39,14 @@
 	text-transform: uppercase;
 	letter-spacing: 8px;
 	font-kerning: none;
-	font-family: var(--title-font), sans-serif;
+	font-family: var(--heading-font), sans-serif;
 	font-size: 96px;
 	text-align: center;
-	color: var(--title-color);
+	color: var(--font-color);
 }
 
 .bibi-post-container {
-	border: 2px solid var(--title-color);
+	border: 2px solid var(--font-color);
 	background-color: var(--bg-color);
 }
 
@@ -85,8 +89,8 @@
 	letter-spacing: 8px;
 	font-kerning: none;
 	font-size: 72px;
-	font-family: var(--title-font), sans-serif;
-	color: var(--title-color);
+	font-family: var(--heading-font), sans-serif;
+	color: var(--font-color);
 	display: grid;
 	place-content: center;
 }
@@ -95,42 +99,53 @@
 	grid-row: 1 / 2;
 }
 
-.bibi-post-container article {
+.bibi-post-container :is(a, article) {
 	background-color: var(--bg-color);
 	padding-top: 12px;
 	display: grid;
 	grid-template:
 		"dt title"
 		"desc desc" / 1fr 2fr;
-	color: var(--title-color);
+	color: var(--font-color);
+	text-decoration: none;
 }
 
-.bibi-post-container article :is(time, .bibi-post-title) {
-	font-family: 'cinzel', serif;
-	justify-self: center;
+.bibi-post-container :is(a, article):hover {
+	background:
+		linear-gradient(to right, var(--hover-color), var(--bg-color)),
+		linear-gradient(to right, var(--bg-color), var(--bg-color));
+
+}
+
+.bibi-post-container :is(a, article) :is(time, .bibi-post-title) {
+	font-family: var(--title-font), serif;
 	align-self: start;
 }
 
-.bibi-post-container article time {
+.bibi-post-container :is(a, article) time {
 	font-size: 24px;
 	line-height: .75;
+	justify-self: center;
 }
 
-.bibi-post-container article .bibi-post-title {
+.bibi-post-container :is(a, article) .bibi-post-title {
 	text-align: end;
+	justify-self: end;
 }
 
-.bibi-post-container article .bibi-post-title h4 {
-	font-size: 48px;
+.bibi-post-container :is(a, article) .bibi-post-title h4 {
+	font-size: var(--title-size);
+	margin-right: 16px;
 	line-height: .85;
 }
 
-.bibi-post-container article .bibi-post-title span {
-	font-family: 'ubuntu', sans-serif;
+.bibi-post-container :is(a, article) .bibi-post-title span {
+	font-family: var(--desc-font), sans-serif;
+	margin-right: 16px;
 	font-size: 14px;
 }
 
-.bibi-post-container article .bibi-post-details {
+.bibi-post-container :is(a, article) .bibi-post-details {
 	grid-area: desc;
 	font-family: Ubuntu, serif;
 	margin: 8px 16px;
