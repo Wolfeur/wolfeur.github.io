@@ -30,125 +30,138 @@
 	width: 700px;
 }
 
-.bibi-post-history :is(h2, h3, h4) {
-	margin: 0;
-	font-weight: normal;
-}
+@layer bibi {
+	.bibi-post-history :not(time) > br {
+		display: none !important;
+	}
 
-.bibi-post-history h2 {
-	text-transform: uppercase;
-	letter-spacing: 8px;
-	font-kerning: none;
-	font-family: var(--heading-font), sans-serif;
-	font-size: 96px;
-	text-align: center;
-	color: var(--font-color);
-}
+	.bibi-post-history * {
+		border: none !important;
+		font-weight: normal !important;
+		background: none !important;
+	}
 
-.bibi-post-container {
-	border: 2px solid var(--font-color);
-	background-color: var(--bg-color);
-}
+	.bibi-post-history :is(h2, h3, h4) {
+		margin: 0 !important;
+		font-weight: normal !important;
+	}
 
-.bibi-post-month header {
-	display: grid;
-	height: 96px;
-	grid-template-columns: 1fr 2fr;
-	background-color: var(--month-color);
-}
+	.bibi-post-history h2 {
+		text-transform: uppercase !important;
+		letter-spacing: 8px !important;
+		font-kerning: none !important;
+		font-family: var(--heading-font), sans-serif !important;
+		font-size: 96px !important;
+		text-align: center !important;
+		color: var(--font-color) !important;
+	}
 
-.bibi-post-month:nth-child(2n) header {
-	grid-template-columns: 2fr 1fr;
-}
+	.bibi-post-container {
+		border: 2px solid var(--font-color) !important;
+		background-color: var(--bg-color) !important;
+	}
 
-.bibi-post-month header .bibi-icon {
-	background-color: black;
-	border-radius: 0 48px 48px 0;
-	display: grid;
-	place-content: center;
-}
+	.bibi-post-month header {
+		display: grid !important;
+		height: 96px !important;
+		grid-template-columns: 1fr 2fr !important;
+		background-color: var(--month-color) !important;
+	}
 
-.bibi-post-month header .bibi-icon::before {
-	content: '';
-	width: 64px;
-	height: 64px;
-	background-color: var(--month-color);
-	mask-image: var(--img);
-	mask-size: cover;
-	-webkit-mask-image: var(--img);
-	-webkit-mask-size: cover;
-}
+	.bibi-post-month:nth-of-type(2n) header {
+		grid-template-columns: 2fr 1fr !important;
+	}
 
-.bibi-post-month:nth-child(2n) header .bibi-icon {
-	border-radius: 48px 0 0 48px;
-	grid-column: 2 / 3;
-}
+	.bibi-post-month header .bibi-icon {
+		background-color: black !important;
+		border-radius: 0 48px 48px 0 !important;
+		display: grid !important;
+		place-content: center !important;
+	}
 
-.bibi-post-month header h3 {
-	text-transform: uppercase;
-	letter-spacing: 8px;
-	font-kerning: none;
-	font-size: 72px;
-	font-family: var(--heading-font), sans-serif;
-	color: var(--font-color);
-	display: grid;
-	place-content: center;
-}
+	.bibi-post-month header .bibi-icon::before {
+		content: '' !important;
+		width: 64px !important;
+		height: 64px !important;
+		background-color: var(--month-color) !important;
+		mask-image: var(--img) !important;
+		mask-size: cover !important;
+		-webkit-mask-image: var(--img) !important;
+		-webkit-mask-size: cover !important;
+	}
 
-.bibi-post-month:nth-child(2n) header h3 {
-	grid-row: 1 / 2;
-}
+	.bibi-post-month:nth-of-type(2n) header .bibi-icon {
+		border-radius: 48px 0 0 48px !important;
+		grid-column: 2 / 3 !important;
+	}
 
-.bibi-post-container :is(a, article) {
-	background-color: var(--bg-color);
-	padding-top: 12px;
-	display: grid;
-	grid-template:
+	.bibi-post-month header h3 {
+		text-transform: uppercase !important;
+		letter-spacing: 8px !important;
+		font-kerning: none !important;
+		font-size: 72px !important;
+		font-family: var(--heading-font), sans-serif !important;
+		color: var(--font-color) !important;
+		display: grid !important;
+		place-content: center !important;
+	}
+
+	.bibi-post-month:nth-of-type(2n) header h3 {
+		grid-row: 1 / 2 !important;
+	}
+
+	.bibi-post-container :is(a, article) {
+		background-color: var(--bg-color) !important;
+		padding-top: 12px !important;
+		display: grid !important;
+		grid-template:
 		"dt title"
-		"desc desc" / 1fr 2fr;
-	color: var(--font-color);
-	text-decoration: none;
+		"desc desc" / 1fr 2fr !important;
+		color: var(--font-color) !important;
+		text-decoration: none !important;
+	}
+
+	.bibi-post-container :is(a, article):hover {
+		background:
+			linear-gradient(to right, var(--hover-color), var(--bg-color)),
+			linear-gradient(to right, var(--bg-color), var(--bg-color)) !important;
+
+	}
+
+	.bibi-post-container :is(a, article) :is(time, .bibi-post-title) {
+		font-family: var(--title-font), serif !important;
+		align-self: start !important;
+	}
+
+	.bibi-post-container :is(a, article) time {
+		font-size: 24px !important;
+		line-height: .75 !important;
+		justify-self: center !important;
+	}
+
+	.bibi-post-container :is(a, article) .bibi-post-title {
+		text-align: end !important;
+		justify-self: end !important;
+	}
+
+	.bibi-post-container :is(a, article) .bibi-post-title h4 {
+		font-size: var(--title-size) !important;
+		margin-right: 16px !important;
+		line-height: .85 !important;
+	}
+
+	.bibi-post-container :is(a, article) .bibi-post-title span {
+		font-family: var(--desc-font), sans-serif !important;
+		margin-right: 16px !important;
+		font-size: 14px !important;
+	}
+
+	.bibi-post-container :is(a, article) .bibi-post-details {
+		grid-area: desc !important;
+		font-family: Ubuntu, serif !important;
+		margin: 8px 16px !important;
+		border: 2px solid black !important;
+		padding: 8px !important;
+	}
 }
 
-.bibi-post-container :is(a, article):hover {
-	background:
-		linear-gradient(to right, var(--hover-color), var(--bg-color)),
-		linear-gradient(to right, var(--bg-color), var(--bg-color));
-
-}
-
-.bibi-post-container :is(a, article) :is(time, .bibi-post-title) {
-	font-family: var(--title-font), serif;
-	align-self: start;
-}
-
-.bibi-post-container :is(a, article) time {
-	font-size: 24px;
-	line-height: .75;
-	justify-self: center;
-}
-
-.bibi-post-container :is(a, article) .bibi-post-title {
-	text-align: end;
-	justify-self: end;
-}
-
-.bibi-post-container :is(a, article) .bibi-post-title h4 {
-	font-size: var(--title-size);
-	margin-right: 16px;
-	line-height: .85;
-}
-
-.bibi-post-container :is(a, article) .bibi-post-title span {
-	font-family: var(--desc-font), sans-serif;
-	margin-right: 16px;
-	font-size: 14px;
-}
-
-.bibi-post-container :is(a, article) .bibi-post-details {
-	grid-area: desc;
-	font-family: Ubuntu, serif;
-	margin: 8px 16px;
-	border: 2px solid black;
-	padding: 8px;
-}
