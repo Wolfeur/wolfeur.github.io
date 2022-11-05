@@ -121,6 +121,7 @@
 
 	.bibi-rp .catchphrase {
 		grid-area: cp !important;
+		line-height: initial !important;
 	}
 
 	.bibi-rp-container .content {
@@ -133,8 +134,8 @@
 
 	.bibi-rp-container .content p {
 		text-align: justify !important;
-		margin-block: 1em;
-		line-height: initial;
+		margin-block: 1em !important;
+		line-height: initial !important;
 	}
 
 	.bibi-rp-container .content p.bibi-dialogue {
