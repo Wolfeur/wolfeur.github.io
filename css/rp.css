@@ -1,0 +1,195 @@
+@font-face {
+	font-family: 'pristina';
+	src: url("../fonts/pristina.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: 'bellmt';
+	src: url("../fonts/bellmt-regular.woff2") format("woff2");
+}
+
+@font-face {
+	font-family: 'bellmt';
+	src: url("../fonts/bellmt-medium.woff2") format("woff2");
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: 'bellmt';
+	src: url("../fonts/bellmt-italic.woff2") format("woff2");
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'bellmt';
+	src: url("../fonts/bellmt-mediumitalic.woff2") format("woff2");
+	font-weight: 500;
+	font-style: italic;
+}
+
+.bibi-rp {
+	--title-color: white;
+	--title-font: 'pristina';
+	--text-color: black;
+	--rp-font: 'bellmt';
+	--bg-top-color: #ff00ff;
+	--bg-bottom-color: #00ccff;
+	--rp-info-color: #77eeff;
+	--rp-info-shadow-color: #2453b3;
+	--rp-top-color: #ffddff;
+	--rp-bottom-color: #00ccff88;
+	--text-top-color: #333366;
+	--text-bottom-color: #001e59;
+	--dialogue-color: black;
+	--rp-bg-img: url('../img/bg.svg');
+
+	width: 500px;
+	background: linear-gradient(to bottom, var(--bg-top-color), var(--bg-bottom-color));
+}
+
+@layer bibi {
+	:is(.bibi-rp br) {
+		display: none !important;
+	}
+
+	.bibi-rp {
+		padding: 0 1.5em 1.5em;
+	}
+
+	.bibi-rp h2 {
+		margin: 0;
+		padding-block: .5em .15em;
+		font-weight: normal;
+		letter-spacing: 2px;
+		text-align: center;
+		font-family: var(--title-font), serif;
+		font-size: 3em;
+		color: var(--title-color);
+	}
+
+	.bibi-rp-container {
+		padding: 1em 0;
+		font-family: bellmt, serif;
+		font-weight: 500;
+		background-color: white;
+		background-image: linear-gradient(to bottom, var(--rp-top-color), var(--rp-bottom-color)), var(--rp-bg-img);
+		box-shadow: 0 10px 25px 0 #0008;
+	}
+
+	/*.bibi-rp-container:before {
+		content: "";
+		z-index: -1;
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(to bottom, #0000 0%, #0008 100% );
+		filter: blur(25px);
+		border-radius: inherit;
+	}*/
+
+	.bibi-rp header {
+		padding: 0 1em .5em;
+		display: grid;
+		grid-template:
+			"images info"
+			"cp cp" / 160px 1fr;
+		grid-gap: 5px 15px;
+		align-items: start;
+		border-bottom: 5px solid black;
+	}
+
+	.bibi-rp header .bibi-rp-images {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 10px;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.bibi-rp-images > img {
+		height: 75px;
+		width: 75px;
+		border-radius: 50%;
+		background-color: black;
+		object-fit: cover;
+		overflow: hidden;
+	}
+
+	.bibi-rp header .bibi-rp-info {
+		--shadow-blur: 2px;
+		line-height: 1.5em;
+		color: var(--rp-info-color);
+		font-size: larger;
+		/*font-weight: bold;*/
+		/*-webkit-text-stroke: medium var(--rp-info-shadow-color);*/
+		text-shadow: -1px 1px var(--shadow-blur) var(--rp-info-shadow-color),
+		1px 1px var(--shadow-blur) var(--rp-info-shadow-color),
+		1px -1px var(--shadow-blur) var(--rp-info-shadow-color),
+		-1px -1px var(--shadow-blur) var(--rp-info-shadow-color),
+		0 0 5px var(--rp-info-shadow-color);
+	}
+
+	.bibi-rp .catchphrase {
+		grid-area: cp;
+	}
+
+	.bibi-rp-container .content {
+		padding-inline: 1em;
+		background: linear-gradient(var(--text-top-color), var(--text-bottom-color));
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
+	}
+
+	.bibi-rp-container .content p {
+		text-align: justify;
+	}
+
+	.bibi-rp-container .content p.bibi-dialogue {
+		display: grid;
+		grid-template: "img reply" / 50px 1fr;
+	}
+
+	.bibi-rp-container .content p.bibi-dialogue.reply {
+		grid-template: "reply img" / 1fr 50px;
+	}
+
+	.bibi-rp-container .content p.bibi-dialogue img {
+		grid-area: img;
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		object-fit: cover;
+		overflow: hidden;
+		background-color: black;
+	}
+
+	.bibi-rp-container .content p.bibi-dialogue q {
+		grid-area: reply;
+		color: var(--dialogue-color);
+		position: relative;
+		margin-inline: 1em;
+	}
+
+	.bibi-rp-container .content p.bibi-dialogue q::before {
+		position: absolute;
+		left: -.5em;
+		font-size: 1.5em;
+	}
+
+	.bibi-rp-container .content p.bibi-dialogue q::after {
+		position: absolute;
+		right: -.5em;
+		bottom: -.5em;
+		font-size: 1.5em;
+	}
+
+	.bibi-rp-container .content p:last-child {
+		margin-bottom: 0;
+	}
+
+	.bibi-rp-container .content p.hrp {
+		border: 2px solid black;
+		padding: .5em 1em;
+		color: var(--dialogue-color);
+	}
+}
