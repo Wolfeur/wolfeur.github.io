@@ -19,7 +19,7 @@
 
 .bibi-post-history {
 	--heading-font: 'the brother hoops';
-	--title-font: 'cinzel';
+	--rp-title-font: 'cinzel';
 	--desc-font: 'ubuntu';
 	--font-color: white;
 	--month-color: #984344;
@@ -136,7 +136,7 @@
 	}
 
 	.bibi-post-container :is(a, article) :is(time, .bibi-post-title) {
-		font-family: var(--title-font), serif !important;
+		font-family: var(--rp-title-font), serif !important;
 		align-self: start !important;
 	}
 
@@ -152,7 +152,7 @@
 	}
 
 	.bibi-post-container :is(a, article) .bibi-post-title h4 {
-		font-family: var(--title-font), serif !important;
+		font-family: var(--rp-title-font), serif !important;
 		text-align: end !important;
 		font-size: var(--title-size) !important;
 		margin-right: 16px !important;
