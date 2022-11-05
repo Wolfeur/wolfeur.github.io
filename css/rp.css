@@ -47,9 +47,8 @@
 		--text-bottom-color: #001e59 !important;
 		--dialogue-color: black !important;
 		--rp-bg-img: url('../img/bg.svg') !important;
-	}
 
-	.bibi-rp {
+		font-size: initial !important;
 		padding: 0 1.5em 1.5em !important;
 		width: 500px !important;
 		background: linear-gradient(to bottom, var(--bg-top-color), var(--bg-bottom-color)) !important;
@@ -78,11 +77,12 @@
 	.bibi-rp header {
 		padding: 0 1em .5em !important;
 		position: initial !important;
+		background: initial !important;
 		display: grid !important;
 		grid-template:
 			"images info"
 			"cp cp" / 160px 1fr !important;
-		grid-gap: 5px 15px !important;
+		grid-gap: 0 1em !important;
 		align-items: start !important;
 		border-bottom: 5px solid black !important;
 	}
@@ -106,6 +106,7 @@
 
 	.bibi-rp header .bibi-rp-info {
 		--shadow-blur: 2px !important;
+		margin-top: .5em !important;
 		line-height: 1.5em !important;
 		color: var(--rp-info-color) !important;
 		font-size: larger !important;
@@ -132,6 +133,8 @@
 
 	.bibi-rp-container .content p {
 		text-align: justify !important;
+		margin-block: 1em;
+		line-height: initial;
 	}
 
 	.bibi-rp-container .content p.bibi-dialogue {
@@ -158,6 +161,7 @@
 		color: var(--dialogue-color) !important;
 		position: relative !important;
 		margin-inline: 1em !important;
+		quotes: "“" "”" !important;
 	}
 
 	.bibi-rp-container .content p.bibi-dialogue q::before {
