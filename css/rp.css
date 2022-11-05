@@ -183,7 +183,7 @@
 		font-size: 1.5em;
 	}
 
-	.bibi-rp-container .content p:last-child {
+	.bibi-rp-container .content p:last-of-type {
 		margin-bottom: 0;
 	}
 
