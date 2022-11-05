@@ -106,7 +106,6 @@
 
 	.bibi-rp header .bibi-rp-info {
 		--shadow-blur: 2px !important;
-		margin-top: .5em !important;
 		line-height: 1.5em !important;
 		color: var(--rp-info-color) !important;
 		font-size: larger !important;
@@ -120,6 +119,7 @@
 	}
 
 	.bibi-rp .catchphrase {
+		margin-top: .5em !important;
 		grid-area: cp !important;
 		line-height: initial !important;
 	}
