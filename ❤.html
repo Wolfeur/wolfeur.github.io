@@ -46,7 +46,7 @@
 				translate: var(--translate);
 				animation-name: heart-pop, heart-two;
 				animation-duration: .35s, .1s;
-				animation-delay: 1s, 2.1s;
+				animation-delay: 1s, 2.15s;
 				animation-timing-function: ease-out;
 				animation-fill-mode: backwards, forwards;
 			}
@@ -68,8 +68,8 @@
 				width: 75vmin;
 				height: 75vmin;
 				animation-name: arrow, arrow-two;
-				animation-duration: .1s, .1s;
-				animation-delay: 2s, 2.1s;
+				animation-duration: .15s, .1s;
+				animation-delay: 2s, 2.15s;
 				animation-timing-function: linear, ease-out;
 				animation-fill-mode: backwards, forwards;
 			}
@@ -112,7 +112,7 @@
 
 			@keyframes arrow {
 				0% {
-					translate: -100vmax 100vmax;
+					translate: -100vmin 100vmin;
 				}
 				100% {
 					translate: -37.5vmin 37.5vmin;
@@ -124,7 +124,7 @@
 					translate: -37.5vmin 37.5vmin;
 				}
 				75% {
-					translate: 10vmax -10vmax;
+					translate: 10vmin -10vmin;
 				}
 				100% {
 					translate: 0 0;
@@ -137,7 +137,7 @@
 					scale: var(--scale) 1;
 				}
 				50% {
-					translate: calc(var(--translate) + 10vmax) -10vmax;
+					translate: calc(var(--translate) + 10vmin) -10vmin;
 				}
 				100% {
 					translate: var(--translate) 0;
