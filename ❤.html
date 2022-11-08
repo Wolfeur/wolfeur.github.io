@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Bon annif, mon cœur ❤</title>
+		<style>
+			@font-face {
+				font-family: 'YoureInvited';
+				src: url("fonts/YoureInvited.woff2") format("woff2");
+			}
+
+			html, body {
+				overflow: hidden;
+			}
+			body {
+				background: radial-gradient(#ffe000, #ffb100);
+				display: grid;
+				place-items: center;
+				height: 100vh;
+				margin: 0;
+			}
+
+			body > * {
+				grid-area: 1 / 1 / 2 / 2;
+			}
+
+			p {
+				position: relative;
+				z-index: 5;
+				font-family: 'YoureInvited', cursive;
+				color: white;
+				font-size: 9vh;
+				text-align: center;
+				text-shadow: 0 0 1rem #333;
+				animation-name: text;
+				animation-delay: 4s;
+				animation-duration: 2s;
+				animation-fill-mode: both;
+			}
+
+			#left, #right {
+				position: relative;
+				width: 25vmin;
+				height: 50vmin;
+				scale: var(--scale) 1;
+				translate: var(--translate);
+				animation-name: heart-pop, heart-two;
+				animation-duration: .35s, .1s;
+				animation-delay: 1s, 2.1s;
+				animation-timing-function: ease-out;
+				animation-fill-mode: backwards, forwards;
+			}
+
+			#left {
+				--translate: -12.4vmin;
+				--scale: 1;
+				/*translate: -12.45vmin;*/
+				z-index: -1;
+			}
+			#right {
+				--translate: 12.4vmin;
+				--scale: -1;
+				z-index: 2;
+				/*scale: -1 1;
+				translate: 12.45vmin;*/
+			}
+			#arrow {
+				width: 75vmin;
+				height: 75vmin;
+				animation-name: arrow, arrow-two;
+				animation-duration: .1s, .1s;
+				animation-delay: 2s, 2.1s;
+				animation-timing-function: linear, ease-out;
+				animation-fill-mode: backwards, forwards;
+			}
+
+			@keyframes text {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
+			}
+
+			@keyframes heart-pop {
+				0% {
+					translate: 0;
+					scale: 0 0;
+				}
+				20% {
+					translate: calc(var(--translate) * 1.2);
+					scale: calc(var(--scale) * 1.2) 1.2;
+				}
+				40% {
+					translate: calc(var(--translate) * .9);
+					scale: calc(var(--scale) * .9) .9;
+				}
+				60% {
+					translate: calc(var(--translate) * 1.1);
+					scale: calc(var(--scale) * 1.1) 1.1;
+				}
+				80% {
+					translate: calc(var(--translate) * .9);
+					scale: calc(var(--scale) * .9) .9;
+				}
+				100% {
+					translate: var(--translate);
+					scale: var(--scale) 1;
+				}
+			}
+
+			@keyframes arrow {
+				0% {
+					translate: -100vmax 100vmax;
+				}
+				100% {
+					translate: -37.5vmin 37.5vmin;
+				}
+			}
+
+			@keyframes arrow-two {
+				0% {
+					translate: -37.5vmin 37.5vmin;
+				}
+				75% {
+					translate: 10vmax -10vmax;
+				}
+				100% {
+					translate: 0 0;
+				}
+			}
+
+			@keyframes heart-two {
+				0% {
+					translate: var(--translate) 0;
+					scale: var(--scale) 1;
+				}
+				50% {
+					translate: calc(var(--translate) + 10vmax) -10vmax;
+				}
+				100% {
+					translate: var(--translate) 0;
+					scale: var(--scale) 1;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<svg id="left" viewBox="0 0 50 100" xmlns="http://www.w3.org/2000/svg">
+			<ellipse style="fill: rgb(192, 0, 0);" cx="25" cy="25" rx="25" ry="25"></ellipse>
+			<path style="fill: rgb(192, 0, 0);" d="M 0 25 C 0 50 25 75 50 100 L 50 25"></path>
+		</svg>
+		<svg id="right" viewBox="0 0 50 100" xmlns="http://www.w3.org/2000/svg">
+			<ellipse style="fill: rgb(192, 0, 0);" cx="25" cy="25" rx="25" ry="25"></ellipse>
+			<path style="fill: rgb(192, 0, 0);" d="M 0 25 C 0 50 25 75 50 100 L 50 25"></path>
+		</svg>
+		<svg id="arrow" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
+			<line style="stroke: black; stroke-width: 2px;" x1="15" y1="135" x2="145" y2="5"></line>
+			<polygon style="fill: black;" points="150 0 135 5 145 5 145 15"></polygon>
+			<polygon style="fill: black;" points="35 115 25 115 5 135 15 135 15 145 35 125"></polygon>
+		</svg>
+		<p>Bon anniversaire, mon Cœur !</p>
+	</body>
+</html>
