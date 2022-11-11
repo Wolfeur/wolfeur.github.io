@@ -28,25 +28,25 @@
 }
 
 @layer bibi {
-	:is(.bibi-rp br) {
+	.bibi-rp :not(p) > br {
 		display: none !important;
 	}
 
 	.bibi-rp {
-		--rp-title-color: white !important;
-		--rp-title-font: 'pristina' !important;
-		--rp-text-color: black !important;
-		--rp-font: 'bellmt' !important;
-		--bg-top-color: #ff00ff !important;
-		--bg-bottom-color: #00ccff !important;
-		--rp-info-color: #77eeff !important;
-		--rp-info-shadow-color: #2453b3 !important;
-		--rp-top-color: #ffddff !important;
-		--rp-bottom-color: #00ccff88 !important;
-		--text-top-color: #333366 !important;
-		--text-bottom-color: #001e59 !important;
-		--dialogue-color: black !important;
-		--rp-bg-img: url('../img/bg.svg') !important;
+		--rp-title-color: white;
+		--rp-title-font: 'pristina';
+		--rp-text-color: black;
+		--rp-font: 'bellmt';
+		--bg-top-color: #ff00ff;
+		--bg-bottom-color: #00ccff;
+		--rp-info-color: #77eeff;
+		--rp-info-shadow-color: #2453b3;
+		--rp-top-color: #ffddff;
+		--rp-bottom-color: #00ccff88;
+		--text-top-color: #333366;
+		--text-bottom-color: #001e59;
+		--dialogue-color: black;
+		--rp-bg-img: url('../img/bg.svg');
 
 		font-size: initial !important;
 		padding: 0 1.5em 1.5em !important;
@@ -63,6 +63,7 @@
 		font-family: var(--rp-title-font), serif !important;
 		font-size: 3em !important;
 		color: var(--rp-title-color) !important;
+		line-height: initial !important;
 	}
 
 	.bibi-rp-container {
@@ -133,6 +134,7 @@
 	}
 
 	.bibi-rp-container .content p {
+		font-family: 'bellmt', serif !important;
 		text-align: justify !important;
 		margin-block: 1em !important;
 		line-height: initial !important;
